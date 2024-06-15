@@ -19,28 +19,29 @@ botones.forEach(boton => {
 //Utilizamos getElementById y textContent para mostrar y cambiar el resultado y las puntuaciones con un mensaje concatenado.
 
 function jugada(eleccionUsuario) {
-    let opciones = ['piedra', 'papel', 'tijera'];
+    let opciones = ['Piedra 🪨', 'Papel 📋', 'Tijera ✂️'];
     let eleccionOrdenador = opciones[Math.floor(Math.random() * opciones.length)];
     let resultado = '';
 
     if (eleccionOrdenador === eleccionUsuario) {
         resultado = 'Empate. ¡WOW!';
     } else if (
-        (eleccionOrdenador === 'piedra' && eleccionUsuario === 'papel') ||
-        (eleccionOrdenador === 'papel' && eleccionUsuario === 'tijera') ||
-        (eleccionOrdenador === 'tijera' && eleccionUsuario === 'piedra')
+        (eleccionOrdenador === 'Piedra 🪨' && eleccionUsuario === 'Papel 📋') ||
+        (eleccionOrdenador === 'Papel 📋' && eleccionUsuario === 'Tijera ✂️') ||
+        (eleccionOrdenador === 'Tijera ✂️' && eleccionUsuario === 'Piedra 🪨')
     ) {
-        resultado = 'Has ganado :D ' + eleccionUsuario + ' vence.';
+        resultado = 'Has ganado 😁 ' + eleccionUsuario + ' vence.';
         jugador++;
         
     } else {
-        resultado = 'Has perdido :C ' + eleccionOrdenador + ' te gana.'; 
+        resultado = 'Has perdido 🫠 ' + eleccionOrdenador + ' te gana.'; 
         pc++;
     }
     document.getElementById('resultados').textContent = resultado;
     document.getElementById('contador-usuario').textContent = 'Tu puntuacion es ' + jugador + '.';
     document.getElementById('contador-ordenador').textContent = 'La puntuación de la IA es ' + pc + '.';
 }
+
 
 
 
